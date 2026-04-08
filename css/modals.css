@@ -1,0 +1,20 @@
+/* ── MODALS ── */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:600;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s;backdrop-filter:blur(3px)}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:#fff;max-width:480px;width:90%;padding:36px;position:relative;transform:scale(.96);transition:transform .25s;max-height:90vh;overflow-y:auto}
+.modal-overlay.open .modal{transform:scale(1)}
+.modal h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:500;color:var(--ink);margin-bottom:6px}
+.modal-sub{font-size:.84rem;color:var(--muted);margin-bottom:24px}
+.modal-close{position:absolute;top:16px;right:16px;cursor:pointer;color:var(--muted);background:none;border:none;font-size:1.3rem;transition:color .2s}
+.modal-close:hover{color:var(--ink)}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:5px}
+.form-group input,.form-group select,.form-group textarea{width:100%;border:1px solid var(--sand);padding:10px 13px;font-family:'Tajawal',sans-serif;font-size:.9rem;color:var(--ink);background:#fff;outline:none;transition:border-color .2s}
+.form-group textarea{resize:vertical;min-height:80px}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-submit{width:100%;padding:13px;background:var(--gold);color:var(--ink);border:none;font-family:'Tajawal',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-top:8px;transition:background .2s}
+.form-submit:hover{background:var(--gold-l)}
+.form-submit:disabled{opacity:.6;cursor:not-allowed}
+.form-error{color:#C4622A;font-size:.78rem;margin-top:6px;display:none}
+.form-error.visible{display:block}

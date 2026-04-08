@@ -1,0 +1,27 @@
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .t-strip{grid-template-columns:repeat(4,1fr)}
+  .pkg-grid{grid-template-columns:repeat(2,1fr)}
+  .doc-grid{grid-template-columns:repeat(2,1fr)}
+  .news-grid{grid-template-columns:1fr 1fr}
+  .zel-grid{grid-template-columns:repeat(3,1fr)}
+  .foot-top{grid-template-columns:1fr 1fr}
+  .nav-center{display:none}
+}
+@media(max-width:640px){
+  .container{padding:0 20px}
+  .slide-content{padding:0 24px}
+  .hero-dots{left:24px}
+  .hero-counter{right:24px}
+  .t-strip{grid-template-columns:repeat(2,1fr)}
+  .pkg-grid{grid-template-columns:1fr}
+  .doc-grid{grid-template-columns:1fr 1fr}
+  .review-grid{grid-template-columns:1fr}
+  .news-grid{grid-template-columns:1fr}
+  .zel-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-top{grid-template-columns:1fr}
+  .stats-inner{flex-wrap:wrap;gap:28px;justify-content:center}
+  section{padding:52px 0}
+  .chat-window{width:calc(100vw - 32px);right:16px}
+  .form-row{grid-template-columns:1fr}
+}

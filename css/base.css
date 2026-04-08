@@ -1,0 +1,12 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#C4933A;--gold-l:#DEB96A;--gold-pale:#F5EDDA;
+  --ink:#1A1410;--ink2:#2C2218;
+  --cream:#FBF7F0;--sand:#EDE0C8;--sand-d:#D4C09A;
+  --terra:#8B4513;--terra-l:#C4622A;
+  --teal:#1A5F6E;--teal-l:#237A8C;
+  --muted:#7A6A58;
+  --nav-h:60px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Tajawal',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}

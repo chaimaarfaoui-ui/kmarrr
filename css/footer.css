@@ -1,0 +1,27 @@
+/* ── FOOTER ── */
+footer{background:var(--ink2);padding:56px 0 28px;position:relative;overflow:hidden}
+footer::before{content:'';position:absolute;inset:0;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30Z' fill='none' stroke='%23C4933A' stroke-width='.5'/%3E%3C/svg%3E")}
+.foot-inner{position:relative;z-index:1}
+.foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.07)}
+.foot-logo{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:300;color:#fff;margin-bottom:12px;letter-spacing:.04em}
+.foot-logo b{color:var(--gold)}
+.foot-desc{font-size:.84rem;color:rgba(255,255,255,.38);line-height:1.75;max-width:280px;margin-bottom:24px}
+.foot-contact{display:flex;flex-direction:column;gap:12px}
+.contact-item{display:flex;align-items:center;gap:10px;font-size:.83rem;color:rgba(255,255,255,.5)}
+.contact-item a{color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
+.contact-item a:hover{color:var(--gold)}
+.wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-size:.78rem;font-weight:500;padding:10px 20px;text-decoration:none;margin-top:16px;transition:background .2s}
+.wa-btn:hover{background:#1db954}
+.foot-socials{display:flex;gap:10px;margin-top:20px}
+.soc{width:34px;height:34px;border:1px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;font-size:.85rem;color:rgba(255,255,255,.45);text-decoration:none;transition:border-color .2s,color .2s}
+.soc:hover{border-color:var(--gold);color:var(--gold)}
+.foot-col h4{font-size:.63rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:20px}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-col a{font-size:.82rem;color:rgba(255,255,255,.42);text-decoration:none;transition:color .2s;cursor:pointer}
+.foot-col a:hover{color:#fff}
+.foot-bot{display:flex;justify-content:space-between;align-items:center;padding-top:4px}
+.foot-copy{font-size:.72rem;color:rgba(255,255,255,.25)}
+.foot-legal{display:flex;gap:20px}
+.foot-legal a{font-size:.7rem;color:rgba(255,255,255,.25);text-decoration:none}
+.foot-legal a:hover{color:rgba(255,255,255,.55)}
+.tunisian-divider{text-align:center;padding:14px 0;font-size:1.1rem;letter-spacing:.5em;color:var(--gold);opacity:.4}

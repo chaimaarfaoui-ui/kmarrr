@@ -1,0 +1,524 @@
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-left">
+      <button class="burger-btn" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+      <a href="#" class="logo">Med<b>Tunisia</b></a>
+    </div>
+    <div class="nav-center" id="navCenter">
+      <div class="nav-link">
+        Treatments
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        <div class="dd">
+          <div class="dd-sec">Surgery</div>
+          <a href="#" onclick="prefillTreatment('Rhinoplasty')">🩺 Rhinoplasty</a>
+          <a href="#" onclick="prefillTreatment('Facelift')">✨ Facelift</a>
+          <a href="#" onclick="prefillTreatment('Liposuction')">💪 Liposuction</a>
+          <a href="#" onclick="prefillTreatment('Blepharoplasty')">👁 Blepharoplasty</a>
+          <a href="#" onclick="prefillTreatment('Tummy Tuck')">🩹 Tummy Tuck</a>
+          <div class="dd-sec">Non-Surgical</div>
+          <a href="#" onclick="prefillTreatment('Dental Veneers')">🦷 Dental Veneers</a>
+          <a href="#" onclick="prefillTreatment('Hair Transplant')">💇 Hair Transplant</a>
+          <a href="#" onclick="prefillTreatment('Fillers &amp; Botox')">💉 Fillers &amp; Botox</a>
+        </div>
+      </div>
+      <div class="nav-link">
+        Doctors
+        <a href="#doctors" style="position:absolute;inset:0;" onclick="document.querySelector('.doctors-sec').scrollIntoView({behavior:'smooth'});return false"></a>
+      </div>
+      <div class="nav-link">
+        Packages
+        <a href="#packages" style="position:absolute;inset:0;" onclick="document.querySelector('.packages-sec').scrollIntoView({behavior:'smooth'});return false"></a>
+      </div>
+      <div class="nav-link">
+        About
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        <div class="dd">
+          <a href="#">🏥 Why MedTunisia</a>
+          <a href="#">📍 Destinations</a>
+          <a href="#" onclick="document.querySelector('.reviews-sec').scrollIntoView({behavior:'smooth'});return false">⭐ Patient Reviews</a>
+          <a href="#">📋 How It Works</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-right">
+      <!-- Logged out -->
+      <button id="nav-login-btn" class="nav-icon" onclick="openModal('loginModal')" title="Sign In">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </button>
+      <!-- Logged in -->
+      <div id="nav-user-menu" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span id="nav-user-label">Account</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:12px;height:12px"><path d="M6 9l6 6 6-6"/></svg>
+        <div class="dd">
+          <a href="#">👤 My Dashboard</a>
+          <a href="#">📋 My Bookings</a>
+          <a href="#" onclick="doLogout();return false" style="color:#C4622A">🚪 Sign Out</a>
+        </div>
+      </div>
+      <button class="nav-icon" onclick="toggleChat()" title="AI Assistant">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </button>
+      <button class="nav-cta" onclick="openModal('bookModal')">Book Now</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO SLIDESHOW ── -->
+<div class="hero">
+  <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1600&q=80')">
+    <div class="slide-content"><div class="slide-text">
+      <div class="slide-kicker">Featured · Facial Surgery</div>
+      <h1 class="slide-title">Redefine<br/><em>Your</em><br/>Confidence</h1>
+      <p class="slide-body">Tunisia's top surgeons deliver world-class results at 70% less than European prices — full recovery support included.</p>
+      <button class="slide-cta" onclick="openModal('bookModal')">Book Free Consultation</button>
+    </div></div>
+  </div>
+  <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=1600&q=80')">
+    <div class="slide-content"><div class="slide-text">
+      <div class="slide-kicker">Most Popular · Rhinoplasty</div>
+      <h1 class="slide-title">Redefine<br/><em>Your</em><br/>Profile</h1>
+      <p class="slide-body">Natural, refined rhinoplasty results — full recovery support, 5★ hotels, airport transfers all included.</p>
+      <button class="slide-cta" onclick="prefillTreatment('Rhinoplasty')">Explore Rhinoplasty</button>
+    </div></div>
+  </div>
+  <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1600&q=80')">
+    <div class="slide-content"><div class="slide-text">
+      <div class="slide-kicker">Hair Restoration · FUE / DHI</div>
+      <h1 class="slide-title">Restore<br/><em>Your</em><br/>Confidence</h1>
+      <p class="slide-body">Advanced FUE and DHI hair transplants in Hammamet's top clinics. Natural results, zero scarring, full aftercare.</p>
+      <button class="slide-cta" onclick="prefillTreatment('Hair Transplant')">See Hair Results</button>
+    </div></div>
+  </div>
+  <div class="hero-dots" id="heroDots">
+    <div class="dot active" onclick="goToSlide(0)"></div>
+    <div class="dot" onclick="goToSlide(1)"></div>
+    <div class="dot" onclick="goToSlide(2)"></div>
+  </div>
+  <div class="hero-counter" id="heroCounter">1 / 3</div>
+</div>
+
+<!-- ── TREATMENT STRIP ── -->
+<div class="treatment-strip">
+  <div class="t-strip">
+    <a class="t-tile" href="#" onclick="prefillTreatment('Rhinoplasty');return false">
+      <img src="https://images.unsplash.com/photo-1585159812596-e5d7e7f31d30?w=300&q=75" alt="Rhinoplasty" loading="lazy"/>
+      <div class="t-tile-label"><div class="t-tile-name">Rhinoplasty</div><div class="t-tile-price">from €1,800</div></div>
+    </a>
+    <a class="t-tile" href="#" onclick="prefillTreatment('Facelift');return false">
+      <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=300&q=75" alt="Facelift" loading="lazy"/>
+      <div class="t-tile-label"><div class="t-tile-name">Facelift</div><div class="t-tile-price">from €2,200</div></div>
+    </a>
+    <a class="t-tile" href="#" onclick="prefillTreatment('Dental Veneers');return false">
+      <img src="https://images.unsplash.com/photo-1567515004624-219c11d31f2e?w=300&q=75" alt="Dental Veneers" loading="lazy"/>
+      <div class="t-tile-label"><div class="t-tile-name">Dental Veneers</div><div class="t-tile-price">from €180/tooth</div></div>
+    </a>
+    <a class="t-tile" href="#" onclick="prefillTreatment('Hair Transplant');return false">
+      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=300&q=75" alt="Hair Transplant" loading="lazy"/>
+      <div class="t-tile-label"><div class="t-tile-name">Hair Transplant</div><div class="t-tile-price">from €900</div></div>
+    </a>
+    <a class="t-tile" href="#" onclick="prefillTreatment('Liposuction');return false">
+      <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=300&q=75" alt="Liposuction" loading="lazy"/>
+      <div class="t-tile-label"><div class="t-tile-name">Liposuction</div><div class="t-tile-price">from €1,200</div></div>
+    </a>
+    <a class="t-tile" href="#" onclick="prefillTreatment('Fillers &amp; Botox');return false">
+      <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=300&q=75" alt="Fillers & Botox" loading="lazy"/>
+      <div class="t-tile-label"><div class="t-tile-name">Fillers &amp; Botox</div><div class="t-tile-price">from €250</div></div>
+    </a>
+    <a class="t-tile" href="#" onclick="prefillTreatment('Blepharoplasty');return false">
+      <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=300&q=75" alt="Blepharoplasty" loading="lazy"/>
+      <div class="t-tile-label"><div class="t-tile-name">Blepharoplasty</div><div class="t-tile-price">from €800</div></div>
+    </a>
+    <a class="t-tile" href="#" onclick="prefillTreatment('Tummy Tuck');return false">
+      <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=300&q=75" alt="Tummy Tuck" loading="lazy"/>
+      <div class="t-tile-label"><div class="t-tile-name">Tummy Tuck</div><div class="t-tile-price">from €1,500</div></div>
+    </a>
+  </div>
+</div>
+
+<!-- ── PACKAGES ── -->
+<section class="packages-sec">
+  <div class="container">
+    <div class="sec-hd rev">
+      <div><p class="sec-lbl">All-Inclusive</p><h2 class="sec-ttl">Our <em>packages</em></h2></div>
+      <a href="#" class="va" onclick="openModal('bookModal');return false">Compare All →</a>
+    </div>
+    <div class="pkg-grid">
+      <div class="pkg-card featured rev">
+        <div class="pkg-photo">
+          <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=500&q=80" alt="Glow" loading="lazy"/>
+          <div class="pkg-photo-ov"></div>
+          <div class="pkg-photo-tag">Most Popular</div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-icon-row"><div class="pkg-zel-icon"></div><div class="pkg-name">Glow Transformation</div></div>
+          <div class="pkg-price">€2,490 <span>all-inclusive</span></div>
+          <div class="pkg-includes">Rhinoplasty · 5★ hotel · Airport transfers · 7 nights · Post-op care</div>
+          <button class="pkg-btn" onclick="prefillTreatment('Glow Transformation Package')">Book Package</button>
+        </div>
+      </div>
+      <div class="pkg-card rev d1">
+        <div class="pkg-photo">
+          <img src="https://images.unsplash.com/photo-1567515004624-219c11d31f2e?w=500&q=80" alt="Smile" loading="lazy"/>
+          <div class="pkg-photo-ov"></div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-icon-row"><div class="pkg-zel-icon"></div><div class="pkg-name">Smile Makeover</div></div>
+          <div class="pkg-price">€890 <span>all-inclusive</span></div>
+          <div class="pkg-includes">10 Veneers · 4★ hotel · Transfers · 4 nights · Free whitening</div>
+          <button class="pkg-btn" onclick="prefillTreatment('Smile Makeover Package')">Book Package</button>
+        </div>
+      </div>
+      <div class="pkg-card rev d2">
+        <div class="pkg-photo">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500&q=80" alt="Hair" loading="lazy"/>
+          <div class="pkg-photo-ov"></div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-icon-row"><div class="pkg-zel-icon"></div><div class="pkg-name">Hair Restoration</div></div>
+          <div class="pkg-price">€1,100 <span>all-inclusive</span></div>
+          <div class="pkg-includes">FUE/DHI · 4★ hotel · Transfers · 3 nights · PRP treatment</div>
+          <button class="pkg-btn" onclick="prefillTreatment('Hair Restoration Package')">Book Package</button>
+        </div>
+      </div>
+      <div class="pkg-card rev d3">
+        <div class="pkg-photo">
+          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=500&q=80" alt="Anti-Aging" loading="lazy"/>
+          <div class="pkg-photo-ov"></div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-icon-row"><div class="pkg-zel-icon"></div><div class="pkg-name">Anti-Aging Retreat</div></div>
+          <div class="pkg-price">€1,290 <span>all-inclusive</span></div>
+          <div class="pkg-includes">Facelift/Fillers · 5★ spa hotel · Transfers · 6 nights</div>
+          <button class="pkg-btn" onclick="prefillTreatment('Anti-Aging Retreat Package')">Book Package</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EDITORIAL BANNER ── -->
+<div class="editorial-banner">
+  <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1600&q=80" alt="Editorial"/>
+  <div class="editorial-content">
+    <p class="editorial-kicker">Expert Insight · Medical Tourism</p>
+    <h2 class="editorial-title">Why Tunisia<br/>Changes<br/><em>Everything</em></h2>
+    <p class="editorial-body">70% cost savings, JCI-accredited clinics, and the Mediterranean lifestyle you deserve during recovery. Discover why 12,000+ patients chose us.</p>
+    <button class="editorial-cta" onclick="openModal('bookModal')">Explore Tunisia →</button>
+  </div>
+</div>
+
+<!-- ── DOCTORS ── -->
+<section class="doctors-sec">
+  <div class="container">
+    <div class="sec-hd rev">
+      <div><p class="sec-lbl">Our Specialists</p><h2 class="sec-ttl" style="color:#fff">Meet our <em>doctors</em></h2></div>
+      <a href="#" class="va rev" style="color:rgba(255,255,255,.4);border-color:rgba(255,255,255,.2)" onclick="openModal('bookModal');return false">All Doctors →</a>
+    </div>
+    <div class="doc-grid">
+      <div class="doc-card rev" onclick="prefillTreatment('Rhinoplasty')">
+        <div class="doc-photo"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80" alt="Dr. Karim" loading="lazy"/><div class="doc-photo-frame"></div><div class="doc-photo-bar"></div></div>
+        <div class="doc-info">
+          <div class="doc-name">Dr. Karim Ben Salah</div>
+          <div class="doc-spec">Plastic &amp; Aesthetic Surgery</div>
+          <div class="doc-clinic">Clinique Estetika, Tunis</div>
+          <div class="doc-rating"><span class="stars">★★★★★</span> 4.9 · 218 reviews</div>
+        </div>
+      </div>
+      <div class="doc-card rev d1" onclick="prefillTreatment('Dental Veneers')">
+        <div class="doc-photo"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80" alt="Dr. Leila" loading="lazy"/><div class="doc-photo-frame"></div><div class="doc-photo-bar"></div></div>
+        <div class="doc-info">
+          <div class="doc-name">Dr. Leila Gharbi</div>
+          <div class="doc-spec">Dental &amp; Implantology</div>
+          <div class="doc-clinic">Smile Center, Sousse</div>
+          <div class="doc-rating"><span class="stars">★★★★★</span> 4.8 · 341 reviews</div>
+        </div>
+      </div>
+      <div class="doc-card rev d2" onclick="prefillTreatment('Hair Transplant')">
+        <div class="doc-photo"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&q=80" alt="Dr. Aymen" loading="lazy"/><div class="doc-photo-frame"></div><div class="doc-photo-bar"></div></div>
+        <div class="doc-info">
+          <div class="doc-name">Dr. Aymen Jalloul</div>
+          <div class="doc-spec">Hair Restoration (FUE/DHI)</div>
+          <div class="doc-clinic">HairPro Clinic, Hammamet</div>
+          <div class="doc-rating"><span class="stars">★★★★★</span> 4.9 · 189 reviews</div>
+        </div>
+      </div>
+      <div class="doc-card rev d3" onclick="prefillTreatment('Fillers &amp; Botox')">
+        <div class="doc-photo"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80" alt="Dr. Sonia" loading="lazy"/><div class="doc-photo-frame"></div><div class="doc-photo-bar"></div></div>
+        <div class="doc-info">
+          <div class="doc-name">Dr. Sonia Triki</div>
+          <div class="doc-spec">Anti-Aging Medicine</div>
+          <div class="doc-clinic">MedEsthe, Tunis</div>
+          <div class="doc-rating"><span class="stars">★★★★☆</span> 4.7 · 142 reviews</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GALLERY ── -->
+<div class="zellige-strip">
+  <div class="container">
+    <div class="sec-hd rev">
+      <div><p class="sec-lbl">Tunisia</p><h2 class="sec-ttl" style="color:#fff">Heal in <em>paradise</em></h2></div>
+    </div>
+  </div>
+  <div class="zel-grid">
+    <div class="zel-tile"><img src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=400&q=75" alt="Tunis Medina" loading="lazy"/><div class="zel-tile-ov"></div><div class="zel-tile-label">Tunis Medina</div></div>
+    <div class="zel-tile"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=75" alt="Hammamet" loading="lazy"/><div class="zel-tile-ov"></div><div class="zel-tile-label">Hammamet Beach</div></div>
+    <div class="zel-tile"><img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&q=75" alt="Hotel" loading="lazy"/><div class="zel-tile-ov"></div><div class="zel-tile-label">5★ Recovery Hotels</div></div>
+    <div class="zel-tile"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=75" alt="Sousse" loading="lazy"/><div class="zel-tile-ov"></div><div class="zel-tile-label">Sousse</div></div>
+    <div class="zel-tile"><img src="https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?w=400&q=75" alt="Djerba" loading="lazy"/><div class="zel-tile-ov"></div><div class="zel-tile-label">Djerba Island</div></div>
+    <div class="zel-tile"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&q=75" alt="Clinic" loading="lazy"/><div class="zel-tile-ov"></div><div class="zel-tile-label">World-Class Clinics</div></div>
+  </div>
+</div>
+
+<!-- ── REVIEWS ── -->
+<section class="reviews-sec">
+  <div class="container">
+    <div class="sec-hd">
+      <div><p class="sec-lbl rev">Patient Experiences</p><h2 class="sec-ttl rev d1">Real results, <em>real stories</em></h2></div>
+      <a href="#" class="va rev" onclick="openModal('bookModal');return false">All Reviews →</a>
+    </div>
+    <div class="review-grid">
+      <div class="rv rev">
+        <div class="rv-photo"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80" alt="Rhinoplasty" loading="lazy"/><div class="rv-photo-ov"></div><div class="rv-treatment-badge">Rhinoplasty</div></div>
+        <div class="rv-body">
+          <div class="rv-top"><div class="rv-ava" style="background:linear-gradient(135deg,#1A5F6E,#0E3040)">S</div><div><div class="rv-name">Sophie M.</div><div class="rv-info">🇫🇷 France · 3 months ago</div></div></div>
+          <div class="rv-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <div class="rv-text">"The results are absolutely natural. The surgeon was meticulous. Even the hotel in Hammamet was beautiful — I barely felt like I was recovering."</div>
+        </div>
+      </div>
+      <div class="rv rev d1">
+        <div class="rv-photo"><img src="https://images.unsplash.com/photo-1567515004624-219c11d31f2e?w=600&q=80" alt="Dental" loading="lazy"/><div class="rv-photo-ov"></div><div class="rv-treatment-badge">Dental Veneers</div></div>
+        <div class="rv-body">
+          <div class="rv-top"><div class="rv-ava" style="background:linear-gradient(135deg,#8B4513,#502010)">J</div><div><div class="rv-name">James R.</div><div class="rv-info">🇬🇧 UK · 1 month ago</div></div></div>
+          <div class="rv-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <div class="rv-text">"10 veneers in 3 days. Total cost less than 2 teeth in London. The Smile Makeover package was flawless — everything handled perfectly."</div>
+        </div>
+      </div>
+      <div class="rv rev d2">
+        <div class="rv-photo"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Hair" loading="lazy"/><div class="rv-photo-ov"></div><div class="rv-treatment-badge">Hair Transplant</div></div>
+        <div class="rv-body">
+          <div class="rv-top"><div class="rv-ava" style="background:linear-gradient(135deg,#3A1A5F,#200E40)">K</div><div><div class="rv-name">Karim D.</div><div class="rv-info">🇧🇪 Belgium · 5 months ago</div></div></div>
+          <div class="rv-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <div class="rv-text">"My hair transplant changed my life. FUE technique, no scarring. Results after 8 months are remarkable. MedTunisia handled everything."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NEWS ── -->
+<section class="news-sec">
+  <div class="news-zellige"></div>
+  <div class="container">
+    <div class="sec-hd rev">
+      <div><p class="sec-lbl">Latest</p><h2 class="sec-ttl">News &amp; <em>insights</em></h2></div>
+      <a href="#" class="va rev">All Articles →</a>
+    </div>
+    <div class="news-grid">
+      <a href="#" class="news-card big rev" onclick="return false">
+        <div class="news-img"><img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=700&q=80" alt="" loading="lazy"/><div class="news-img-ov"></div></div>
+        <div class="news-body">
+          <div class="news-cat">Plastic Surgery</div>
+          <div class="news-title">Why Rhinoplasty in Tunisia Costs 70% Less — Without Compromising on Quality</div>
+          <div class="news-date">March 18, 2025</div>
+        </div>
+      </a>
+      <a href="#" class="news-card rev d1" onclick="return false">
+        <div class="news-img"><img src="https://images.unsplash.com/photo-1588776814546-1ffedbe47425?w=400&q=80" alt="" loading="lazy"/><div class="news-img-ov"></div></div>
+        <div class="news-body">
+          <div class="news-cat">Dental</div>
+          <div class="news-title">The Complete Guide to Dental Veneers in Sousse</div>
+          <div class="news-date">February 5, 2025</div>
+        </div>
+      </a>
+      <a href="#" class="news-card rev d2" onclick="return false">
+        <div class="news-img"><img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&q=80" alt="" loading="lazy"/><div class="news-img-ov"></div></div>
+        <div class="news-body">
+          <div class="news-cat">Hair Restoration</div>
+          <div class="news-title">FUE vs DHI: Which Hair Transplant Method Is Right for You?</div>
+          <div class="news-date">January 22, 2025</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS ── -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item"><span class="stat-n">120+</span><span class="stat-l">Clinics</span></div>
+    <div class="stat-item"><span class="stat-n">40+</span><span class="stat-l">Treatments</span></div>
+    <div class="stat-item"><span class="stat-n">12K+</span><span class="stat-l">Patients</span></div>
+    <div class="stat-item"><span class="stat-n">70%</span><span class="stat-l">Avg. Savings</span></div>
+    <div class="stat-item"><span class="stat-n">4.9★</span><span class="stat-l">Avg. Rating</span></div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-logo">Med<b>Tunisia</b></div>
+        <p class="foot-desc">Tunisia's leading medical tourism platform — world-class care, Mediterranean soul.</p>
+        <div class="foot-contact">
+          <div class="contact-item">📍 Av. Habib Bourguiba, Tunis 1001</div>
+          <div class="contact-item">📞 <a href="tel:+21671000000">+216 71 000 000</a></div>
+          <div class="contact-item">✉️ <a href="/cdn-cgi/l/email-protection#a2c1cdccd6c3c1d6e2cfc7c6d6d7cccbd1cbc38cc1cdcf"><span class="__cf_email__" data-cfemail="7714181903161403371a12130302191e041e165914181a">[email&#160;protected]</span></a></div>
+        </div>
+        <a href="https://wa.me/21671000000" class="wa-btn" target="_blank">💬 Chat on WhatsApp</a>
+        <div class="foot-socials">
+          <a class="soc" href="#">f</a><a class="soc" href="#">in</a><a class="soc" href="#">ig</a><a class="soc" href="#">yt</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a onclick="openModal('bookModal')">All Treatments</a></li>
+          <li><a onclick="document.querySelector('.doctors-sec').scrollIntoView({behavior:'smooth'})">Our Doctors</a></li>
+          <li><a onclick="document.querySelector('.packages-sec').scrollIntoView({behavior:'smooth'})">Packages</a></li>
+          <li><a onclick="document.querySelector('.reviews-sec').scrollIntoView({behavior:'smooth'})">Patient Reviews</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Account</h4>
+        <ul>
+          <li><a onclick="openModal('loginModal')">Sign In</a></li>
+          <li><a onclick="openModal('registerModal')">Register</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Medical Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tunisian-divider">✦ ◆ ✦ ◆ ✦</div>
+    <div class="foot-bot">
+      <span class="foot-copy">© 2025 MedTunisia. All rights reserved.</span>
+      <div class="foot-legal">
+        <a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Medical Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── CHATBOT ── -->
+<div class="chat-fab" onclick="toggleChat()">💬<div class="chat-badge"></div></div>
+<div class="chat-window" id="chatWindow">
+  <div class="chat-head">
+    <div class="chat-ava">🏥</div>
+    <div><div class="chat-title">MedTunisia Assistant</div><div class="chat-status">Powered by AI · Always available</div></div>
+    <button class="chat-close" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="chat-msgs" id="chatMsgs">
+    <div class="msg bot">
+      <div class="msg-bubble">Marhba! 👋 I'm your MedTunisia assistant. I can help you find treatments, compare packages, explain costs, or book a consultation. What are you looking for?</div>
+      <div class="msg-time">Now</div>
+    </div>
+  </div>
+  <div class="quick-replies" id="quickReplies">
+    <button class="qr" onclick="sendQuick('What treatments do you offer?')">Treatments</button>
+    <button class="qr" onclick="sendQuick('How much does rhinoplasty cost?')">Pricing</button>
+    <button class="qr" onclick="sendQuick('Tell me about your packages')">Packages</button>
+    <button class="qr" onclick="sendQuick('How do I book a consultation?')">Booking</button>
+  </div>
+  <div class="chat-input-row">
+    <input type="text" id="chatInput" placeholder="Ask me anything…" onkeydown="if(event.key==='Enter')sendMsg()"/>
+    <button class="chat-send" onclick="sendMsg()">➤</button>
+  </div>
+</div>
+
+<!-- ── BOOK MODAL ── -->
+<div class="modal-overlay" id="bookModal" onclick="if(event.target===this)closeModal('bookModal')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('bookModal')">✕</button>
+    <h3>Book a Consultation</h3>
+    <p class="modal-sub">Fill in your details and we'll contact you within 24 hours.</p>
+    <div class="form-row">
+      <div class="form-group"><label>First Name</label><input id="bk-fname" type="text" placeholder="Sophie"/></div>
+      <div class="form-group"><label>Last Name</label><input id="bk-lname" type="text" placeholder="Martin"/></div>
+    </div>
+    <div class="form-group"><label>Email</label><input id="bk-email" type="email" placeholder="sophie@email.com"/></div>
+    <div class="form-group"><label>Phone / WhatsApp</label><input id="bk-phone" type="tel" placeholder="+33 6 00 00 00 00"/></div>
+    <div class="form-group"><label>Treatment / Package</label>
+      <select id="bk-treatment">
+        <option value="">Select a treatment…</option>
+        <option>Rhinoplasty</option><option>Facelift</option><option>Liposuction</option>
+        <option>Tummy Tuck</option><option>Blepharoplasty</option>
+        <option>Dental Veneers</option><option>Hair Transplant</option>
+        <option>Fillers &amp; Botox</option>
+        <option>Glow Transformation Package</option><option>Smile Makeover Package</option>
+        <option>Hair Restoration Package</option><option>Anti-Aging Retreat Package</option>
+      </select>
+    </div>
+    <div class="form-group"><label>Preferred Travel Dates</label><input id="bk-dates" type="text" placeholder="e.g. June 2025"/></div>
+    <div class="form-group"><label>Message (optional)</label><textarea id="bk-message" placeholder="Any questions or additional details…"></textarea></div>
+    <div class="form-error" id="bk-error"></div>
+    <button class="form-submit" id="bk-submit" onclick="submitBooking()">Request Free Consultation →</button>
+    <p style="text-align:center;margin-top:12px;font-size:.76rem;color:var(--muted)">No account? <a href="#" style="color:var(--teal)" onclick="closeModal('bookModal');openModal('registerModal');return false">Register first</a> to track your booking.</p>
+  </div>
+</div>
+
+<!-- ── LOGIN MODAL ── -->
+<div class="modal-overlay" id="loginModal" onclick="if(event.target===this)closeModal('loginModal')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('loginModal')">✕</button>
+    <h3>Welcome back</h3>
+    <p class="modal-sub">Sign in to your MedTunisia account.</p>
+    <div class="form-group"><label>Email</label><input id="ln-email" type="email" placeholder="you@email.com"/></div>
+    <div class="form-group"><label>Password</label><input id="ln-pass" type="password" placeholder="••••••••"/></div>
+    <div class="form-error" id="ln-error"></div>
+    <button class="form-submit" id="ln-submit" onclick="doLogin()">Sign In →</button>
+    <p style="text-align:center;margin-top:14px;font-size:.82rem;color:var(--muted)">
+      No account? <a href="#" style="color:var(--teal)" onclick="closeModal('loginModal');openModal('registerModal');return false">Register here</a>
+      &nbsp;·&nbsp;
+      <a href="#" style="color:var(--muted)" onclick="closeModal('loginModal');openModal('forgotModal');return false">Forgot password?</a>
+    </p>
+  </div>
+</div>
+
+<!-- ── REGISTER MODAL ── -->
+<div class="modal-overlay" id="registerModal" onclick="if(event.target===this)closeModal('registerModal')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('registerModal')">✕</button>
+    <h3>Create Account</h3>
+    <p class="modal-sub">Join thousands of patients who chose MedTunisia.</p>
+    <div class="form-row">
+      <div class="form-group"><label>First Name</label><input id="rg-fname" type="text" placeholder="Sophie"/></div>
+      <div class="form-group"><label>Last Name</label><input id="rg-lname" type="text" placeholder="Martin"/></div>
+    </div>
+    <div class="form-group"><label>Email</label><input id="rg-email" type="email" placeholder="sophie@email.com"/></div>
+    <div class="form-group"><label>Phone</label><input id="rg-phone" type="tel" placeholder="+33 6 00 00 00 00"/></div>
+    <div class="form-group"><label>Country</label>
+      <select id="rg-country">
+        <option>France</option><option>United Kingdom</option><option>Germany</option>
+        <option>Belgium</option><option>Italy</option><option>Spain</option>
+        <option>Switzerland</option><option>Canada</option><option>Other</option>
+      </select>
+    </div>
+    <div class="form-group"><label>Password</label><input id="rg-pass" type="password" placeholder="Min. 8 characters"/></div>
+    <div class="form-error" id="rg-error"></div>
+    <button class="form-submit" id="rg-submit" onclick="doRegister()">Create Account →</button>
+    <p style="text-align:center;margin-top:14px;font-size:.82rem;color:var(--muted)">Already registered? <a href="#" style="color:var(--teal)" onclick="closeModal('registerModal');openModal('loginModal');return false">Sign in</a></p>
+  </div>
+</div>
+
+<!-- ── FORGOT PASSWORD MODAL ── -->
+<div class="modal-overlay" id="forgotModal" onclick="if(event.target===this)closeModal('forgotModal')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('forgotModal')">✕</button>
+    <h3>Reset Password</h3>
+    <p class="modal-sub">Enter your email and we'll send a reset link.</p>
+    <div class="form-group"><label>Email</label><input id="fp-email" type="email" placeholder="you@email.com"/></div>
+    <div class="form-error" id="fp-error"></div>
+    <button class="form-submit" id="fp-submit" onclick="doForgot()">Send Reset Link →</button>
+    <p style="text-align:center;margin-top:14px;font-size:.82rem;color:var(--muted)"><a href="#" style="color:var(--teal)" onclick="closeModal('forgotModal');openModal('loginModal');return false">← Back to Sign In</a></p>
+  </div>
+</div>
+
+<!-- ── TOAST CONTAINER ── -->
+<div id="toast-container"></div>
+

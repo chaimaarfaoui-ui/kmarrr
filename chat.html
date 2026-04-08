@@ -1,0 +1,25 @@
+<!-- ── CHATBOT ── -->
+<div class="chat-fab" onclick="toggleChat()">💬<div class="chat-badge"></div></div>
+<div class="chat-window" id="chatWindow">
+  <div class="chat-head">
+    <div class="chat-ava">🏥</div>
+    <div><div class="chat-title">MedTunisia Assistant</div><div class="chat-status">Powered by AI · Always available</div></div>
+    <button class="chat-close" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="chat-msgs" id="chatMsgs">
+    <div class="msg bot">
+      <div class="msg-bubble">Marhba! 👋 I'm your MedTunisia assistant. I can help you find treatments, compare packages, explain costs, or book a consultation. What are you looking for?</div>
+      <div class="msg-time">Now</div>
+    </div>
+  </div>
+  <div class="quick-replies" id="quickReplies">
+    <button class="qr" onclick="sendQuick('What treatments do you offer?')">Treatments</button>
+    <button class="qr" onclick="sendQuick('How much does rhinoplasty cost?')">Pricing</button>
+    <button class="qr" onclick="sendQuick('Tell me about your packages')">Packages</button>
+    <button class="qr" onclick="sendQuick('How do I book a consultation?')">Booking</button>
+  </div>
+  <div class="chat-input-row">
+    <input type="text" id="chatInput" placeholder="Ask me anything…" onkeydown="if(event.key==='Enter')sendMsg()"/>
+    <button class="chat-send" onclick="sendMsg()">➤</button>
+  </div>
+</div>

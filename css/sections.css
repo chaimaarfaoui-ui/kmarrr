@@ -1,0 +1,9 @@
+/* ── SECTIONS ── */
+section{padding:72px 0}
+.container{max-width:1200px;margin:0 auto;padding:0 48px}
+.sec-lbl{font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:8px}
+.sec-ttl{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3vw,2.8rem);font-weight:300;line-height:1.15;color:var(--ink)}
+.sec-ttl em{font-style:italic;color:var(--terra-l)}
+.sec-hd{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px}
+.va{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px;transition:color .2s;cursor:pointer}
+.va:hover{color:var(--gold)}

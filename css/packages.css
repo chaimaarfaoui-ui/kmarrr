@@ -1,0 +1,22 @@
+/* ── PACKAGES ── */
+.packages-sec{background:#fff}
+.pkg-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--sand)}
+.pkg-card{position:relative;overflow:hidden;cursor:pointer;border-right:1px solid var(--sand)}
+.pkg-card:last-child{border-right:none}
+.pkg-photo{height:220px;overflow:hidden;position:relative}
+.pkg-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s,filter .5s;filter:brightness(.7)}
+.pkg-card:hover .pkg-photo img{transform:scale(1.06);filter:brightness(.9)}
+.pkg-photo-ov{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M20 0 L40 20 L20 40 L0 20Z' fill='none' stroke='%23C4933A' stroke-width='.4' opacity='.25'/%3E%3C/svg%3E");opacity:0;transition:opacity .4s}
+.pkg-card:hover .pkg-photo-ov{opacity:1}
+.pkg-photo-tag{position:absolute;bottom:12px;left:12px;background:var(--gold);color:var(--ink);font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px}
+.pkg-body{padding:20px}
+.pkg-icon-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.pkg-zel-icon{width:36px;height:36px;flex-shrink:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' fill='%231A1410'/%3E%3Cpath d='M18 2 L34 18 L18 34 L2 18Z' fill='none' stroke='%23C4933A' stroke-width='.8'/%3E%3Cpath d='M18 8 L28 18 L18 28 L8 18Z' fill='none' stroke='%23C4933A' stroke-width='.5'/%3E%3Ccircle cx='18' cy='18' r='3' fill='%23C4933A' opacity='.6'/%3E%3C/svg%3E");background-size:cover}
+.pkg-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;color:var(--ink);margin-bottom:4px}
+.pkg-price{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:500;color:var(--terra-l);margin-bottom:10px}
+.pkg-price span{font-family:'Tajawal',sans-serif;font-size:.72rem;color:var(--muted)}
+.pkg-includes{font-size:.78rem;color:var(--muted);line-height:1.8;margin-bottom:16px}
+.pkg-btn{display:block;width:100%;padding:11px;text-align:center;background:var(--ink);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:none;font-family:'Tajawal',sans-serif;cursor:pointer;transition:background .2s}
+.pkg-btn:hover{background:var(--teal)}
+.pkg-card.featured .pkg-btn{background:var(--gold);color:var(--ink)}
+.pkg-card.featured .pkg-btn:hover{background:var(--gold-l)}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MedTunisia — World-Class Care, Mediterranean Soul</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,500&family=Tajawal:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+<!-- ── STYLES ── -->
+<link rel="stylesheet" href="css/base.css"/>
+<link rel="stylesheet" href="css/nav.css"/>
+<link rel="stylesheet" href="css/hero.css"/>
+<link rel="stylesheet" href="css/treatments.css"/>
+<link rel="stylesheet" href="css/editorial.css"/>
+<link rel="stylesheet" href="css/sections.css"/>
+<link rel="stylesheet" href="css/packages.css"/>
+<link rel="stylesheet" href="css/doctors.css"/>
+<link rel="stylesheet" href="css/gallery.css"/>
+<link rel="stylesheet" href="css/reviews.css"/>
+<link rel="stylesheet" href="css/news.css"/>
+<link rel="stylesheet" href="css/stats.css"/>
+<link rel="stylesheet" href="css/footer.css"/>
+<link rel="stylesheet" href="css/chat.css"/>
+<link rel="stylesheet" href="css/modals.css"/>
+<link rel="stylesheet" href="css/toast.css"/>
+<link rel="stylesheet" href="css/animations.css"/>
+<link rel="stylesheet" href="css/responsive.css"/>
+</head>
+<body>
+
+<!-- Sections loaded via includes (or paste inline for static hosting) -->
+<!-- ── NAVIGATION ── -->
+<div id="nav-placeholder"></div>
+
+<!-- ── HERO ── -->
+<div id="hero-placeholder"></div>
+
+<!-- ── TREATMENTS ── -->
+<div id="treatments-placeholder"></div>
+
+<!-- ── PACKAGES ── -->
+<div id="packages-placeholder"></div>
+
+<!-- ── EDITORIAL ── -->
+<div id="editorial-placeholder"></div>
+
+<!-- ── DOCTORS ── -->
+<div id="doctors-placeholder"></div>
+
+<!-- ── GALLERY ── -->
+<div id="gallery-placeholder"></div>
+
+<!-- ── REVIEWS ── -->
+<div id="reviews-placeholder"></div>
+
+<!-- ── NEWS ── -->
+<div id="news-placeholder"></div>
+
+<!-- ── STATS ── -->
+<div id="stats-placeholder"></div>
+
+<!-- ── FOOTER ── -->
+<div id="footer-placeholder"></div>
+
+<!-- ── CHAT ── -->
+<div id="chat-placeholder"></div>
+
+<!-- ── MODALS ── -->
+<div id="modals-placeholder"></div>
+
+<!-- ── TOAST ── -->
+<div id="toast-container"></div>
+
+<!-- ── SCRIPTS ── -->
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/modals.js"></script>
+<script src="js/login.js"></script>
+<script src="js/register.js"></script>
+<script src="js/forgot.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/slideshow.js"></script>
+<script src="js/mobile-nav.js"></script>
+<script src="js/scroll-reveal.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/init.js"></script>
+
+<!-- ── HTML INCLUDE LOADER ── -->
+<script>
+  const includes = [
+    ['nav-placeholder',       'nav.html'],
+    ['hero-placeholder',      'hero.html'],
+    ['treatments-placeholder','treatments.html'],
+    ['packages-placeholder',  'packages.html'],
+    ['editorial-placeholder', 'editorial.html'],
+    ['doctors-placeholder',   'doctors.html'],
+    ['gallery-placeholder',   'gallery.html'],
+    ['reviews-placeholder',   'reviews.html'],
+    ['news-placeholder',      'news.html'],
+    ['stats-placeholder',     'stats.html'],
+    ['footer-placeholder',    'footer.html'],
+    ['chat-placeholder',      'chat.html'],
+    ['modals-placeholder',    'modals.html'],
+  ];
+
+  Promise.all(includes.map(([id, file]) =>
+    fetch(file)
+      .then(r => r.text())
+      .then(html => { document.getElementById(id).outerHTML = html; })
+  )).then(() => {
+    // Re-init after all HTML is loaded
+    if (typeof updateNavAuth === 'function') updateNavAuth();
+    document.querySelectorAll('.rev').forEach(el => {
+      if (typeof obs !== 'undefined') obs.observe(el);
+    });
+  });
+</script>
+
+</body>
+</html>

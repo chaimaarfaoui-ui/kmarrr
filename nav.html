@@ -1,0 +1,84 @@
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-left">
+      <button class="burger-btn" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+      <a href="#" class="logo">Med<b>Tunisia</b></a>
+    </div>
+    <div class="nav-center" id="navCenter">
+      <div class="nav-link">
+        Treatments
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        <div class="dd">
+          <div class="dd-sec">Face Surgery</div>
+          <a href="#" onclick="prefillTreatment('Rhinoplasty')">🩺 Rhinoplasty — from €2,200</a>
+          <a href="#" onclick="prefillTreatment('Facelift')">✨ Facelift — from €2,600</a>
+          <a href="#" onclick="prefillTreatment('Blepharoplasty')">👁 Blepharoplasty — from €1,400</a>
+          <a href="#" onclick="prefillTreatment('Lip Lift')">💋 Lip Lift — from €1,600</a>
+          <a href="#" onclick="prefillTreatment('Genioplasty')">✦ Genioplasty — from €2,000</a>
+          <div class="dd-sec">Body Surgery</div>
+          <a href="#" onclick="prefillTreatment('Breast Augmentation')">🌸 Breast Augmentation — from €2,400</a>
+          <a href="#" onclick="prefillTreatment('Breast Reduction')">💊 Breast Reduction — from €2,400</a>
+          <a href="#" onclick="prefillTreatment('Liposuction')">💪 Liposuction — from €1,700</a>
+          <a href="#" onclick="prefillTreatment('Tummy Tuck')">🩹 Tummy Tuck — from €3,400</a>
+          <a href="#" onclick="prefillTreatment('Body Lift')">🔥 Body Lift — from €4,200</a>
+          <div class="dd-sec">Non-Surgical</div>
+          <a href="#" onclick="prefillTreatment('Hair Transplant')">💇 Hair Transplant — from €900</a>
+          <a href="#" onclick="prefillTreatment('Fillers &amp; Botox')">💉 Fillers &amp; Botox — from €250</a>
+          <a href="#" onclick="prefillTreatment('PRP')">🔬 PRP — from €200</a>
+          <a href="#" onclick="prefillTreatment('Peeling')">🌿 Peeling — from €120</a>
+        </div>
+      </div>
+      <div class="nav-link">
+        Clinics
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        <div class="dd">
+          <div class="dd-sec">Partner Clinics</div>
+          <a href="#">🏥 Clinique Pasteur — Tunis</a>
+          <a href="#">🏥 Clinique Le Bardo — Tunis</a>
+          <div class="dd-sec">Why Our Clinics</div>
+          <a href="#">✅ ISO 9001 Certified</a>
+          <a href="#">✅ HAS Accredited</a>
+          <a href="#">✅ European-standard Hygiene</a>
+        </div>
+      </div>
+      <div class="nav-link">
+        Doctors
+        <a href="#doctors" style="position:absolute;inset:0;" onclick="document.querySelector('.doctors-sec').scrollIntoView({behavior:'smooth'});return false"></a>
+      </div>
+      <div class="nav-link">
+        Packages
+        <a href="#packages" style="position:absolute;inset:0;" onclick="document.querySelector('.packages-sec').scrollIntoView({behavior:'smooth'});return false"></a>
+      </div>
+      <div class="nav-link">
+        About
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        <div class="dd">
+          <a href="#">🏥 Why MedTunisia</a>
+          <a href="#">📍 Destinations</a>
+          <a href="#" onclick="document.querySelector('.reviews-sec').scrollIntoView({behavior:'smooth'});return false">⭐ Patient Reviews</a>
+          <a href="#">📋 How It Works</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-right">
+      <button id="nav-login-btn" class="nav-icon" onclick="openModal('loginModal')" title="Sign In">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </button>
+      <div id="nav-user-menu" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span id="nav-user-label">Account</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:12px;height:12px"><path d="M6 9l6 6 6-6"/></svg>
+        <div class="dd">
+          <a href="#">👤 My Dashboard</a>
+          <a href="#">📋 My Bookings</a>
+          <a href="#" onclick="doLogout();return false" style="color:#C4622A">🚪 Sign Out</a>
+        </div>
+      </div>
+      <button class="nav-icon" onclick="toggleChat()" title="AI Assistant">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </button>
+      <button class="nav-cta" onclick="openModal('bookModal')">Book Now</button>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,6 @@
+/* ── TOAST ── */
+#toast-container{position:fixed;top:80px;right:24px;z-index:9999;display:flex;flex-direction:column;gap:10px;pointer-events:none}
+.toast{background:var(--teal);color:#fff;padding:13px 20px;font-family:'Tajawal',sans-serif;font-size:.88rem;max-width:320px;box-shadow:0 8px 24px rgba(0,0,0,.2);transform:translateX(120%);transition:transform .3s;display:flex;align-items:center;gap:10px}
+.toast.error{background:var(--terra-l)}
+.toast.info{background:var(--gold)}
+.toast.show{transform:translateX(0)}
